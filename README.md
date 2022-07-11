@@ -132,6 +132,25 @@ App:
     port: 8080
     defaultLocale: fr
 ```
+The App config settings is a default one comes in the package
+
+* To call a config setting in your project is:
+```py
+from hkmConfig.Config import ConfigSystem
+
+config = ConfigSystem()
+appConfig = config.Config('App')
+
+```
+* Or
+
+```py
+from hkmConfig.NamespaceHelpers import hkmConfig
+
+appConfig = hkmConfig('App')
+
+
+```
 
 
 ### Prerequisites
