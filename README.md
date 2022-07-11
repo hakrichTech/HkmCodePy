@@ -134,7 +134,7 @@ App:
 ```
 The App config settings is a default one comes in the package
 
-* To call a config setting in your project is:
+* To call a Default config setting in your project is:
 ```py
 from hkmConfig.Config import ConfigSystem
 
@@ -149,9 +149,86 @@ from hkmConfig.NamespaceHelpers import hkmConfig
 
 appConfig = hkmConfig('App')
 
+```
+
+* Calling one of the property of config:
+
+```py
+
+print(appconfig.port) # print: 8080
+
+```
+* If you change the value of port in configuration.yaml file to 6060:
+```yaml
+# APPLICATION
+App:
+    port: 6060
+```
+
+* Then:
+
+```py
+print(appconfig.port) # print: 6060
 
 ```
 
+* To create a config file execute the foellowing command in your project root folder
+
+```sh
+hkmconfig -c Testconfig
+```
+* You will see a Testconfig.py file generated in Hkm_Bin folder with the following contents:
+
+```py
+from hkmConfig.Base import Config
+
+class Testconfig(Config):
+    def RUN(self):
+        self.config_file = 'Testconfig'
+
+```
+
+* and in configuration.yaml
+
+```yaml
+
+# TESTCONFIG
+Testconfig:
+#  configProperty: value
+```
+
+* If want to add any setting in Testconfig ex: test setting
+  you go and open Testconfig.py file and add the following line under <strong>self.config_file = 'Testconfig'</strong> in the same ident
+
+```py
+class Testconfig(Config):
+    def RUN(self):
+        self.config_file = 'Testconfig'
+        self.test = 'Hello test'
+```
+
+* Then to call it any where in your project just do
+
+```py
+testConfig = hkmConfig('Hkm_Bin.Testconfig')
+print(testConfig.test) # print: Hello test
+```
+
+* To change it in configuration.yaml file just do:
+```yaml
+# TESTCONFIG
+Testconfig:
+   test: test modif
+```
+
+* Then to call it again 
+
+```py
+testConfig = hkmConfig('Hkm_Bin.Testconfig')
+print(testConfig.test) # print: test modif
+```
+
+* which mean <em>Hello test</em> is a default value if they dont change it in the configuration.yaml file
 
 ### Prerequisites
 
