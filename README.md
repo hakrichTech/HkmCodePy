@@ -172,7 +172,7 @@ print(appconfig.port) # print: 6060
 
 ```
 
-* To create a config file execute the foellowing command in your project root folder
+* To create a config file execute the following command in your project root folder
 
 ```sh
 hkmconfig -c Testconfig
