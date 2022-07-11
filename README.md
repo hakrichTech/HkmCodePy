@@ -101,9 +101,10 @@ Use the `Code button` to get started.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+<!-- This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples. -->
 
 * [HkmCodePy Framework](https://python.hkmcode.com/)
+* [Python](https://python.hkmcode.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -112,16 +113,30 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This is an example of how you may give instructions on setting up your project configurations file locally.
+To get it up copy up and running follow commands.
+
+* after install everything needed jump to your project root directory, open a terminal and run the following command
+  ```sh
+  hkmconfig -i
+  ```
+
+The above command will generate a configuration package folder in your project root directory called  <a href="#">Hkm_Bin</a> folder with __int__.py file int it
+and <a href="#">configuration.yaml</a> file in root directory
+
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+<!-- This is an example of how to list things you need to use the software and how to install them. -->
+
 * pip
   ```sh
   apt install python3-pip
   ```
+* pyyaml
+ ```sh
+ pip install pyyaml
+ ```
 
 ### Installation
 
