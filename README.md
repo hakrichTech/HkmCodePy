@@ -228,7 +228,7 @@ testConfig = hkmConfig('Hkm_Bin.Testconfig')
 print(testConfig.test) # print: test modif
 ```
 
-* which mean <em>Hello test</em> is a default value if they dont change it in the configuration.yaml file
+* which mean "<em>Hello test</em>" is a default value if they dont change it in the configuration.yaml file
 
 ### Prerequisites
 
