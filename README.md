@@ -124,6 +124,15 @@ To get it up copy up and running follow commands.
 The above command will generate a configuration package folder in your project root directory called  <a href="#">Hkm_Bin</a> folder with __int__.py file int it
 and <a href="#">configuration.yaml</a> file in root directory
 
+* if you open configuration.yaml file you will have this content by default
+```yaml
+# APPLICATION
+App:
+    baseURL: http://localhost
+    port: 8080
+    defaultLocale: fr
+```
+
 
 ### Prerequisites
 
