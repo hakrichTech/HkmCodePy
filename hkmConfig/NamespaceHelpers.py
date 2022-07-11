@@ -1,6 +1,8 @@
-from Hkm_Bin.App import App
-from yamlConfig.YamlParse import YamlParse
-from Helpers.ConfigHelper import hkmRewriteUpdate, hkmUpdateYaml
+import inspect
+from hkmConfig.Helpers.ConfigHelper import hkmRewriteUpdate, hkmUpdateYaml
+from hkmConfig.Hkm_Bin.App import App
+from hkmConfig.yamlConfig.YamlParse import YamlParse
+
 
 def hkmEnvFormat(source:str):
     yaml = YamlParse()
@@ -21,7 +23,6 @@ def __cfg__(cof):
             ar.pop(0)
             if cf == config:
                 prties.append(hkmRewriteUpdate(".".join(ar)))
-    
     for yz in prties:
         for pr,valu in yz.items():
             if pr == "RUN" or pr == "INITIALISING_DEFAULT" or pr == "INITIALIZE" or pr == 'config_file':
@@ -41,8 +42,17 @@ def hkmConfig(configClass:str):
             cof = __cfg__(cl)
     
     if not cof:
-        cof = __import__(configClass, fromlist=[None])
-    return cof  
+        last = configClass.split('.')
+        config = last[len(last)-1]
+        cofl = __import__(configClass,globals(), locals(), fromlist=['Hkm_Bin'])
+        for name, obj in inspect.getmembers(cofl):
+            if inspect.isclass(obj):
+                if name == config:
+                    cof = __cfg__(obj())
+        if not cof:
+            cof = False
+
+    return cof
         
                     
                 

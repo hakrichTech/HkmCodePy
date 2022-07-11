@@ -15,6 +15,8 @@ def hkmUpdateYaml(newValue):
     else:
         if isinstance(newValue,str):
             return newValue.replace('.','_@_')
+        if isinstance(newValue,int):
+            return str(newValue)
         if isinstance(newValue,bool):
             if newValue:
                 return "true"

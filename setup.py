@@ -9,7 +9,7 @@ package_data = \
 
 setup_kwargs = {
     'name': 'HkmCodePy-hkmConfig',
-    'version': '0.0.2',
+    'version': '0.0.3',
     'description': '@HkmCode Configuration system package',
     'long_description': 'file: README.md',
     'author': 'Hakeem Shamavu',
@@ -19,6 +19,11 @@ setup_kwargs = {
     'url': 'https://github.com/hakrichTech/HkmCodePy',
     'packages': packages,
     'package_data': package_data,
+    'entry_points':{
+        'console_scripts': [
+                'hkmconfig = hkmConfig:main',
+            ]
+    },
     'python_requires': '>=3.7,<4.0',
 }
 

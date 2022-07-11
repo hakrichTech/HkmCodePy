@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "HkmCodePy-hkmConfig"
-version = "0.0.2"
+version = "0.0.3"
 description = "@HkmCodePy Configuration system package"
 authors = ["Hakeem Shamavu <hakeemshamavu@hakrichteam.com>"]
 license = "GNU"
@@ -28,7 +28,7 @@ packages = [
 python = "^3.7"
 
 [tool.poetry.dev-dependencies]
-autoload-module = "^1.7.2"
+pyyaml = "^6.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -36,3 +36,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
 profile = "black"
+
+[tool.poetry.scripts]
+hkmInitConfig = "hkmconfig:main"

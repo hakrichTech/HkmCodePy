@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: HkmCodePy-hkmConfig
+Version: 0.0.3
+Summary: @HkmCode Configuration system package
+Home-page: https://github.com/hakrichTech/HkmCodePy
+Author: Hakeem Shamavu
+Author-email: hakeemshamavu@hakrichteam.com
+Maintainer: Hakeem Shamavu
+Maintainer-email: hakeemshamavu@hakrichteam.com
+Requires-Python: >=3.7,<4.0
+License-File: LICENSE
+
+file: README.md

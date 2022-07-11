@@ -1,6 +1,8 @@
-from BaseConfig import BaseConfig
 
-class App(BaseConfig):
+from hkmConfig.Base import Config
+
+
+class App(Config):
     def RUN(self):
         self.config_file = 'App'
         self.baseURL = "http://localhost"
